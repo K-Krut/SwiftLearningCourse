@@ -19,7 +19,7 @@ struct ContentView: View {
             Text("SwiftUI for iOS 15")
                 .font(.largeTitle)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .foregroundStyle(.linearGradient(colors: [.red, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
             Text("20 sections - 3 hours".uppercased())
                 .font(.footnote)
                 .fontWeight(.semibold)
