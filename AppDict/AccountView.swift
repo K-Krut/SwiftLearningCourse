@@ -30,7 +30,7 @@ struct AccountView: View {
                 .symbolVariant(.circle.fill)
                 .font(.system(size: 32))
                 .symbolRenderingMode(.palette)
-                .foregroundStyle(.blue, .blue.opacity(0.3))
+                .foregroundStyle(.accent, .accent.opacity(0.7))
                 .padding()
                 .background(Circle().fill(.ultraThinMaterial))
                 .background(
