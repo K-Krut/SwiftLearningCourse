@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AccountView: View {
+    @State var isDeleted = false
+    
     var body: some View {
         NavigationView {
             
@@ -22,28 +24,68 @@ struct AccountView: View {
                         .background(Circle().fill(.ultraThinMaterial))
                         .background(Image(systemName: "hexagon")
                             .symbolVariant(.fill)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.accent)
                             .font(.system(size: 200))
                             .offset(x: -50, y: -100)
                     )
-                    Text("Testing kdf")
+                    Text("Testing Acc")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/.weight(.semibold))
                     HStack {
-                        Image(systemName: "location").imageScale(.large)
-                        Text("TEST 2")
+                        Image(systemName: "location").imageScale(.small)
+                        Text("location")
                             .foregroundColor(.secondary)
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
+                
                  Section {
-                     Label("Settings", systemImage: "gear")
-                     Label("Billing", systemImage: "creditcard")
-                     Label("Help", systemImage: "questionmark")
-                         .imageScale(.small)
+                     NavigationLink { ContentView() } label: {
+                         Label("Settings", systemImage: "gear")
+                             
+                     }
+                     NavigationLink { ContentView() } label: {
+                         Label("Billing", systemImage: "creditcard")
+                     }
+                     NavigationLink { ContentView() } label: {
+                         Label("Help", systemImage: "questionmark").accentColor(.primary)
+                     }
                 }
-                 .listRowSeparatorTint(.blue)
+                 .foregroundColor(.primary)
+                 .listRowSeparatorTint(.primary)
                  .listRowSeparator(.hidden)
+                Section {
+                    if !isDeleted {
+                        Link(destination: URL(string: "https://github.com/K-Krut")!) {
+                            HStack {
+                                Label("Web", systemImage: "house")
+                                Spacer()
+                                Image(systemName: "link")
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button(action: { isDeleted = true }, label: {
+                                Label("Button", systemImage: "trash")
+                            })
+                            .tint(.red)
+                            Button {} label: {
+                                Label("Pin", systemImage: "pin")
+                            }
+                        }
+                    }
+                    
+                    Link(destination: URL(string: "https://github.com/K-Krut")!) {
+                        HStack {
+                            Label("Web", systemImage: "tv")
+                            Spacer()
+                            Image(systemName: "link")
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                    
+                }.foregroundColor(.primary)
+                    .listRowSeparator(.hidden)
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Account")
@@ -53,4 +95,5 @@ struct AccountView: View {
 
 #Preview {
     AccountView()
+        .preferredColorScheme(.dark)
 }
