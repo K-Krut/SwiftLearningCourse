@@ -10,6 +10,8 @@
 		A18A25492C622C7000382E63 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A25482C622C7000382E63 /* AccountView.swift */; };
 		A18A254B2C635BBF00382E63 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A254A2C635BBF00382E63 /* HexagonView.swift */; };
 		A18A254D2C636BC200382E63 /* BlobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A254C2C636BC200382E63 /* BlobView.swift */; };
+		A18A254F2C638BA500382E63 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A254E2C638BA500382E63 /* TabBarView.swift */; };
+		A18A25512C63942E00382E63 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A25502C63942E00382E63 /* Tab.swift */; };
 		A1F57C672C56D28F005632A7 /* AppDictApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F57C662C56D28F005632A7 /* AppDictApp.swift */; };
 		A1F57C692C56D28F005632A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F57C682C56D28F005632A7 /* ContentView.swift */; };
 		A1F57C6B2C56D291005632A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F57C6A2C56D291005632A7 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		A18A25482C622C7000382E63 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		A18A254A2C635BBF00382E63 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		A18A254C2C636BC200382E63 /* BlobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobView.swift; sourceTree = "<group>"; };
+		A18A254E2C638BA500382E63 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		A18A25502C63942E00382E63 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A1F57C632C56D28F005632A7 /* AppDict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppDict.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F57C662C56D28F005632A7 /* AppDictApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDictApp.swift; sourceTree = "<group>"; };
 		A1F57C682C56D28F005632A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				A1F57C662C56D28F005632A7 /* AppDictApp.swift */,
 				A1F57C682C56D28F005632A7 /* ContentView.swift */,
 				A18A254C2C636BC200382E63 /* BlobView.swift */,
+				A18A254E2C638BA500382E63 /* TabBarView.swift */,
+				A18A25502C63942E00382E63 /* Tab.swift */,
 				A18A25482C622C7000382E63 /* AccountView.swift */,
 				A18A254A2C635BBF00382E63 /* HexagonView.swift */,
 				A1F57C6A2C56D291005632A7 /* Assets.xcassets */,
@@ -270,7 +276,9 @@
 				A18A25492C622C7000382E63 /* AccountView.swift in Sources */,
 				A18A254B2C635BBF00382E63 /* HexagonView.swift in Sources */,
 				A1F57C692C56D28F005632A7 /* ContentView.swift in Sources */,
+				A18A254F2C638BA500382E63 /* TabBarView.swift in Sources */,
 				A1F57C672C56D28F005632A7 /* AppDictApp.swift in Sources */,
+				A18A25512C63942E00382E63 /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
