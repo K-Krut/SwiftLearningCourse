@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  AppDict
 //
-//  Created by Katia Krut on 28.07.2024.
+//  Created by Katia Krut on 08.08.2024.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             Spacer()
@@ -57,6 +57,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
-        .preferredColorScheme(.dark)
+    HomeView()
 }
