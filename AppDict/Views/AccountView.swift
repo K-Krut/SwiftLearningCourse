@@ -121,5 +121,4 @@ struct AccountView: View {
 
 #Preview {
     AccountView()
-        .preferredColorScheme(.dark)
 }

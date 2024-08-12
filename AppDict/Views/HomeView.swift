@@ -8,50 +8,51 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var hasScrolled = false
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 8.0) {
-            Spacer()
-            Image("Logo 2")
-                .resizable(resizingMode: .stretch)
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 26.0, height: 26.0)
-                .cornerRadius(/*@START_MENU_TOKEN@*/20.0/*@END_MENU_TOKEN@*/)
-                .padding(9)
-                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-            Text("SwiftUI for iOS 15")
-                .font(.largeTitle)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
-            Text("20 sections - 3 hours".uppercased())
-                .font(.footnote)
-                .fontWeight(.semibold)
-                .foregroundColor(.secondary)
-            Text("Build an iOS app for iOS 15 with custom layouts, animations and...")
-                .multilineTextAlignment(.leading)
-                .lineLimit(2)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundColor(.secondary)
-        }
-        .padding(/*@START_MENU_TOKEN@*/.all, 20.0/*@END_MENU_TOKEN@*/)
-        .padding(.vertical, 20)
-        .frame(height: 360.0)
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-//        .mask(RoundedRectangle(cornerRadius: 30.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-        .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
-        .overlay(RoundedRectangle(cornerRadius: 30.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
-            .stroke(.linearGradient(colors: [.white.opacity(0.3), .black.opacity(0.1)], startPoint: .top, endPoint: .bottom))
-            .blendMode(.overlay)
+        ZStack {
+            Color("Background").ignoresSafeArea()
+            
+            ScrollView {
+                scrollDetection
+                
+                featured
+                
+                Color.clear.frame(height: 1000)
+            }
+            .coordinateSpace(name: "scroll")
+            .onPreferenceChange(ScrollPrefenceKey.self, perform: { value in
+                withAnimation(.easeInOut) {
+                    hasScrolled = value < 0 ? true : false
+                }
+            })
+            .safeAreaInset(edge: .top, content: {
+                Color.clear.frame(height: 70)
+            })
+            .overlay(
+                NavigationBar(title: "Featured", hasScroll: $hasScrolled)
         )
-        .padding(.horizontal, 20)
+        }
+    }
+    
+    var scrollDetection: some View {
+        GeometryReader { proxy in
+            Color.clear.preference(key: ScrollPrefenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
+        }
+        .frame(height: 0)
+    }
+    
+    var featured: some View {
+        TabView {
+            ForEach(courses) { item in
+                FeaturedItem(course: item)
+            }
+        }
+        .tabViewStyle(.page(indexDisplayMode: .automatic))
+        .frame(height: 430)
         .background(
             Image("Blob 1").offset(x: 250, y: -100)
-        )
-        .overlay(
-            Image("Illustration 5")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 230)
-                .offset(x: 32, y: -80)
         )
     }
 }
