@@ -8,25 +8,27 @@
 import SwiftUI
 
 struct FeaturedItem: View {
+    var course: Course = courses[0]
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             Spacer()
-            Image("Logo 2")
+            Image(course.logo)
                 .resizable(resizingMode: .stretch)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 26.0, height: 26.0)
                 .cornerRadius(/*@START_MENU_TOKEN@*/20.0/*@END_MENU_TOKEN@*/)
                 .padding(9)
                 .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-            Text("SwiftUI for iOS 15")
+            Text(course.title)
                 .font(.largeTitle)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
-            Text("20 sections - 3 hours".uppercased())
+            Text(course.subtitle.uppercased())
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .foregroundColor(.secondary)
-            Text("Build an iOS app for iOS 15 with custom layouts, animations and...")
+            Text(course.text)
                 .multilineTextAlignment(.leading)
                 .lineLimit(2)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -42,11 +44,8 @@ struct FeaturedItem: View {
             .blendMode(.overlay)
         )
         .padding(.horizontal, 20)
-        .background(
-            Image("Blob 1").offset(x: 250, y: -100)
-        )
         .overlay(
-            Image("Illustration 5")
+            Image(course.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 230)

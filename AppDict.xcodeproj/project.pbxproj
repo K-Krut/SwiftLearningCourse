@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A11960B12C6A8463007EEDD2 /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11960B02C6A8463007EEDD2 /* AnimatableFontModifier.swift */; };
+		A11960B32C6A8953007EEDD2 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11960B22C6A8953007EEDD2 /* Course.swift */; };
 		A14AF2412C69304600DF114C /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14AF2402C69304600DF114C /* PreferenceKeys.swift */; };
 		A18A25492C622C7000382E63 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A25482C622C7000382E63 /* AccountView.swift */; };
 		A18A254B2C635BBF00382E63 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A254A2C635BBF00382E63 /* HexagonView.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A11960B02C6A8463007EEDD2 /* AnimatableFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableFontModifier.swift; sourceTree = "<group>"; };
+		A11960B22C6A8953007EEDD2 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		A14AF2402C69304600DF114C /* PreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
 		A18A25482C622C7000382E63 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		A18A254A2C635BBF00382E63 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			children = (
 				A18A25502C63942E00382E63 /* Tab.swift */,
 				A14AF2402C69304600DF114C /* PreferenceKeys.swift */,
+				A11960B22C6A8953007EEDD2 /* Course.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 		A18A25592C64CD7600382E63 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				A11960B02C6A8463007EEDD2 /* AnimatableFontModifier.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11960B32C6A8953007EEDD2 /* Course.swift in Sources */,
 				A14AF2412C69304600DF114C /* PreferenceKeys.swift in Sources */,
 				A18A254D2C636BC200382E63 /* BlobView.swift in Sources */,
 				A18A25492C622C7000382E63 /* AccountView.swift in Sources */,
@@ -335,6 +342,7 @@
 				A18A25532C64C95200382E63 /* HomeView.swift in Sources */,
 				A1F57C672C56D28F005632A7 /* AppDictApp.swift in Sources */,
 				A18A25512C63942E00382E63 /* Tab.swift in Sources */,
+				A11960B12C6A8463007EEDD2 /* AnimatableFontModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

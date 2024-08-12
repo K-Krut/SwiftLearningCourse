@@ -11,28 +11,48 @@ struct HomeView: View {
     @State var hasScrolled = false
     
     var body: some View {
-        ScrollView {
-            GeometryReader { proxy in
-                Color.clear.preference(key: ScrollPrefenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
+        ZStack {
+            Color("Background").ignoresSafeArea()
+            
+            ScrollView {
+                scrollDetection
+                
+                featured
+                
+                Color.clear.frame(height: 1000)
             }
-            .frame(height: 0)
-            
-            FeaturedItem()
-            
-            Color.clear.frame(height: 1000)
+            .coordinateSpace(name: "scroll")
+            .onPreferenceChange(ScrollPrefenceKey.self, perform: { value in
+                withAnimation(.easeInOut) {
+                    hasScrolled = value < 0 ? true : false
+                }
+            })
+            .safeAreaInset(edge: .top, content: {
+                Color.clear.frame(height: 70)
+            })
+            .overlay(
+                NavigationBar(title: "Featured", hasScroll: $hasScrolled)
+        )
         }
-        .coordinateSpace(name: "scroll")
-        .onPreferenceChange(ScrollPrefenceKey.self, perform: { value in
-            withAnimation(.easeInOut) {
-                hasScrolled = value < 0 ? true : false
+    }
+    
+    var scrollDetection: some View {
+        GeometryReader { proxy in
+            Color.clear.preference(key: ScrollPrefenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
+        }
+        .frame(height: 0)
+    }
+    
+    var featured: some View {
+        TabView {
+            ForEach(courses) { item in
+                FeaturedItem(course: item)
             }
-        })
-        .safeAreaInset(edge: .top, content: {
-            Color.clear.frame(height: 70)
-        })
-        .overlay(
-            NavigationBar(title: "Featured")
-                .opacity(hasScrolled ? 1 : 0)
+        }
+        .tabViewStyle(.page(indexDisplayMode: .automatic))
+        .frame(height: 430)
+        .background(
+            Image("Blob 1").offset(x: 250, y: -100)
         )
     }
 }
