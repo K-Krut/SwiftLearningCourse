@@ -22,17 +22,12 @@ struct HomeView: View {
                 Color.clear.frame(height: 1000)
             }
             .coordinateSpace(name: "scroll")
-            .onPreferenceChange(ScrollPrefenceKey.self, perform: { value in
-                withAnimation(.easeInOut) {
-                    hasScrolled = value < 0 ? true : false
-                }
-            })
             .safeAreaInset(edge: .top, content: {
                 Color.clear.frame(height: 70)
             })
             .overlay(
                 NavigationBar(title: "Featured", hasScroll: $hasScrolled)
-        )
+            )
         }
     }
     
@@ -41,6 +36,11 @@ struct HomeView: View {
             Color.clear.preference(key: ScrollPrefenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
         }
         .frame(height: 0)
+        .onPreferenceChange(ScrollPrefenceKey.self, perform: { value in
+            withAnimation(.easeInOut) {
+                hasScrolled = value < 0 ? true : false
+            }
+        })
     }
     
     var featured: some View {
