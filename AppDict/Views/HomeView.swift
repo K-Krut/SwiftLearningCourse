@@ -65,7 +65,7 @@ struct HomeView: View {
                 }
             }
         }
-        .tabViewStyle(.page(indexDisplayMode: .never))
+        .tabViewStyle(.page(indexDisplayMode: .automatic))
         .frame(height: 430)
         .background(
             Image("Blob 1")
