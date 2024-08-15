@@ -31,7 +31,12 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
+//#Preview {
+//    ContentView()
+//}
+//
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
-

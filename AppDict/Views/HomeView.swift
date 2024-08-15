@@ -49,6 +49,13 @@ struct HomeView: View {
             )
             if show {
                 CourseView(namespace: namespace, show: $show)
+                    .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                    .transition(
+                        .asymmetric(
+                            insertion: .opacity.animation(.easeInOut(duration: 0.1)),
+                            removal: .opacity.animation(.easeInOut(duration: 0.3).delay(0.2))
+                        )
+                    )
             }
         }
         .statusBar(hidden: !showStatusBar)
