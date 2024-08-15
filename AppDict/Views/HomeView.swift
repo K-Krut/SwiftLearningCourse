@@ -29,14 +29,16 @@ struct HomeView: View {
                     .padding(.horizontal, 20)
                 
                 if !show {
-                    CourseItem(namespace: namespace, show: $show)
-                        .onTapGesture {
-                            withAnimation(.openCard) {
-                                show.toggle()
-                                
-                                showStatusBar = false
-                            }
+                    ForEach(courses) { item in
+                        CourseItem(namespace: namespace, show: $show, course: item)
+                            .onTapGesture {
+                                withAnimation(.openCard) {
+                                    show.toggle()
+                                    
+                                    showStatusBar = false
+                                }
                         }
+                    }
                 }
                 
             }
@@ -47,15 +49,18 @@ struct HomeView: View {
             .overlay(
                 NavigationBar(title: "Featured", hasScroll: $hasScrolled)
             )
+            
             if show {
-                CourseView(namespace: namespace, show: $show)
-                    .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                    .transition(
-                        .asymmetric(
-                            insertion: .opacity.animation(.easeInOut(duration: 0.1)),
-                            removal: .opacity.animation(.easeInOut(duration: 0.3).delay(0.2))
-                        )
+                ForEach(courses) { item in
+                    CourseView(namespace: namespace, show: $show, course: item)
+                        .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                        .transition(
+                            .asymmetric(
+                                insertion: .opacity.animation(.easeInOut(duration: 0.1)),
+                                removal: .opacity.animation(.easeInOut(duration: 0.3).delay(0.2))
+                            )
                     )
+                }
             }
         }
         .statusBar(hidden: !showStatusBar)
@@ -80,7 +85,7 @@ struct HomeView: View {
     
     var featured: some View {
         TabView {
-            ForEach(courses) { course in
+            ForEach(featuredCourses) { course in
                 GeometryReader { proxy in
                     let minX = proxy.frame(in: .global).minX
                     
