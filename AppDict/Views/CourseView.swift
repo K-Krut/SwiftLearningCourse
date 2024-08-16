@@ -14,6 +14,7 @@ struct CourseView: View {
     var course: Course = courses[0]
     @EnvironmentObject var model: Model
     @State var viewState: CGSize = .zero
+    @State var isDraggable = true
     
     var body: some View {
         ZStack {
@@ -26,24 +27,12 @@ struct CourseView: View {
                     .opacity(appear[2] ? 1 : 0)
             }
             .background(Color("Background"))
-            .mask(RoundedRectangle(cornerRadius: viewState.width / 3, style: .continuous))
+            .mask(RoundedRectangle(cornerRadius: viewState.width / 5, style: .continuous))
             .shadow(color: Color.shadow.opacity(0.3), radius: 30, x: 0, y: 10)
             .scaleEffect(viewState.width / -500 + 1)
             .background(Color.shadow.opacity(viewState.width / 500))
             .background(.ultraThinMaterial)
-            .gesture(
-                DragGesture()
-                    .onChanged { value in
-                        guard value.translation.width > 0 else { return }
-                        
-                        viewState = value.translation
-                    }
-                    .onEnded { value in
-                        withAnimation(.closeCard){
-                            viewState = .zero
-                        }
-                    }
-            )
+            .gesture(isDraggable ? drag : nil)
             .ignoresSafeArea()
             
             button
@@ -54,6 +43,31 @@ struct CourseView: View {
         .onChange(of: show) { newValue in
             fadeOut()
         }
+    }
+    
+    var drag: some Gesture {
+        DragGesture(minimumDistance: 30, coordinateSpace: .local)
+            .onChanged { value in
+                guard value.translation.width > 0 else { return }
+                if value.startLocation.x < 100 {
+                    withAnimation(.closeCard) {
+                        viewState = value.translation
+                    }
+                }
+                
+                if viewState.width > 120 {
+                    close()
+                }
+            }
+            .onEnded { value in
+                if viewState.width > 80 {
+                    close()
+                } else {
+                    withAnimation(.closeCard){
+                        viewState = .zero
+                    }
+                }
+            }
     }
     
     func fadeIn() {
@@ -104,14 +118,14 @@ struct CourseView: View {
                     .offset(y: scrollY > 0 ? -scrollY : 0)
             )
             .overlay(
-                overlayConetent
+                overlayContent
                     .offset(y: scrollY > 0 ? scrollY * -0.4 : 0)
             )
         }
         .frame(height: 500)
     }
     
-    var overlayConetent: some View {
+    var overlayContent: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(course.title)
                 .font(.largeTitle.weight(.bold))
@@ -182,6 +196,20 @@ struct CourseView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         .padding(20)
         .ignoresSafeArea()
+    }
+    
+    func close() {
+        withAnimation(.closeCard.delay(0.3)) {
+            show.toggle()
+            model.showDetail.toggle()
+        }
+        
+        
+        withAnimation(.closeCard){
+            viewState = .zero
+        }
+        
+        isDraggable = false
     }
 }
 
