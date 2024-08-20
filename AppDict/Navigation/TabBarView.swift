@@ -12,24 +12,28 @@ struct TabBarView: View {
     @State var tabItemWidth: CGFloat = 0
     
     var body: some View {
-        HStack {
-            buttons
-        }
-        .padding(.horizontal, 8)
-        .padding(.top, 14)
-        .frame(height: 88, alignment: .top)
-        .background(
-            .ultraThinMaterial,
-            in: RoundedRectangle(cornerRadius: 34, style: .continuous)
-        )
-        .background(
-            circleBackgroundAnimation
-        )
-        .overlay(
-            overlayTabBarAnimation
-        )
-        .frame(maxHeight: .infinity, alignment: .bottom)
+        GeometryReader { proxy in
+            
+            let hasHomeIndicator = proxy.safeAreaInsets.bottom - 44 > 20
+            HStack {
+                buttons
+            }
+            .padding(.horizontal, 8)
+            .padding(.top, 14)
+            .frame(height: 88, alignment: .top)
+            .background(
+                .ultraThinMaterial,
+                in: RoundedRectangle(cornerRadius: hasHomeIndicator ? 34 : 0, style: .continuous)
+            )
+            .background(
+                circleBackgroundAnimation
+            )
+            .overlay(
+                overlayTabBarAnimation
+            )
+            .frame(maxHeight: .infinity, alignment: .bottom)
         .ignoresSafeArea()
+        }
     }
     
     var buttons: some View {
