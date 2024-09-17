@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 struct SearchView: View {
     @State var text = ""
     let names = ["SwiftUI", "React", "UI Design"]
@@ -78,7 +79,8 @@ struct SearchView: View {
     }
 }
 
-#Preview {
-    SearchView()
+struct SearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchView()
+    }
 }
-
