@@ -12,7 +12,8 @@ struct NavigationBar: View {
     @Binding var hasScroll: Bool
     @State var showSearch = false
     @State var showAccount = false
-    
+    @AppStorage("showModal") var showModal = false
+
     var body: some View {
         ZStack {
             Color.clear
@@ -29,7 +30,9 @@ struct NavigationBar: View {
             
             HStack(spacing: 16) {
                 Button {
-                    showSearch = true
+                    withAnimation {
+                        showSearch = true
+                    }
                 } label: {
                     Image(systemName: "magnifyingglass")
                         .font(.body.weight(.bold))
@@ -41,7 +44,10 @@ struct NavigationBar: View {
                 }
                 
                 Button {
-                    showAccount = true
+//                    showAccount = true
+                    withAnimation {
+                        showModal = true
+                    }
                 } label: {
                     Image("Avatar Default")
                         .resizable()
