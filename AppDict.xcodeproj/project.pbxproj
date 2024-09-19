@@ -10,6 +10,8 @@
 		A11960B12C6A8463007EEDD2 /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11960B02C6A8463007EEDD2 /* AnimatableFontModifier.swift */; };
 		A11960B32C6A8953007EEDD2 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11960B22C6A8953007EEDD2 /* Course.swift */; };
 		A14AF2412C69304600DF114C /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14AF2402C69304600DF114C /* PreferenceKeys.swift */; };
+		A16FC4732C999D0F00679796 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16FC4722C999D0F00679796 /* Suggestion.swift */; };
+		A16FC4752C9AFAC000679796 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16FC4742C9AFAC000679796 /* SignUpView.swift */; };
 		A183148D2C6F647100FC989F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A183148C2C6F647000FC989F /* Model.swift */; };
 		A18A25492C622C7000382E63 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A25482C622C7000382E63 /* AccountView.swift */; };
 		A18A254B2C635BBF00382E63 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A254A2C635BBF00382E63 /* HexagonView.swift */; };
@@ -23,6 +25,7 @@
 		A1D66A052C6D0CBB00D7969B /* MatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D66A042C6D0CBA00D7969B /* MatchedView.swift */; };
 		A1D66A072C6D193600D7969B /* CourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D66A062C6D193600D7969B /* CourseItem.swift */; };
 		A1D66A092C6D1A8000D7969B /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D66A082C6D1A8000D7969B /* CourseView.swift */; };
+		A1D8D2632C74BE9900558A38 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8D2622C74BE9900558A38 /* SearchView.swift */; };
 		A1F57C672C56D28F005632A7 /* AppDictApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F57C662C56D28F005632A7 /* AppDictApp.swift */; };
 		A1F57C692C56D28F005632A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F57C682C56D28F005632A7 /* ContentView.swift */; };
 		A1F57C6B2C56D291005632A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F57C6A2C56D291005632A7 /* Assets.xcassets */; };
@@ -53,6 +56,8 @@
 		A11960B02C6A8463007EEDD2 /* AnimatableFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableFontModifier.swift; sourceTree = "<group>"; };
 		A11960B22C6A8953007EEDD2 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		A14AF2402C69304600DF114C /* PreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
+		A16FC4722C999D0F00679796 /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
+		A16FC4742C9AFAC000679796 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A183148C2C6F647000FC989F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A18A25482C622C7000382E63 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		A18A254A2C635BBF00382E63 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 		A1D66A042C6D0CBA00D7969B /* MatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedView.swift; sourceTree = "<group>"; };
 		A1D66A062C6D193600D7969B /* CourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItem.swift; sourceTree = "<group>"; };
 		A1D66A082C6D1A8000D7969B /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		A1D8D2622C74BE9900558A38 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A1F57C632C56D28F005632A7 /* AppDict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppDict.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F57C662C56D28F005632A7 /* AppDictApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDictApp.swift; sourceTree = "<group>"; };
 		A1F57C682C56D28F005632A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,6 +126,8 @@
 				A18A25482C622C7000382E63 /* AccountView.swift */,
 				A1D66A042C6D0CBA00D7969B /* MatchedView.swift */,
 				A1D66A082C6D1A8000D7969B /* CourseView.swift */,
+				A1D8D2622C74BE9900558A38 /* SearchView.swift */,
+				A16FC4742C9AFAC000679796 /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 				A14AF2402C69304600DF114C /* PreferenceKeys.swift */,
 				A11960B22C6A8953007EEDD2 /* Course.swift */,
 				A183148C2C6F647000FC989F /* Model.swift */,
+				A16FC4722C999D0F00679796 /* Suggestion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A11960B32C6A8953007EEDD2 /* Course.swift in Sources */,
+				A1D8D2632C74BE9900558A38 /* SearchView.swift in Sources */,
 				A1D66A072C6D193600D7969B /* CourseItem.swift in Sources */,
 				A1A6C1192C6E6566002DE6CF /* Animations.swift in Sources */,
 				A14AF2412C69304600DF114C /* PreferenceKeys.swift in Sources */,
@@ -354,6 +364,7 @@
 				A18A254B2C635BBF00382E63 /* HexagonView.swift in Sources */,
 				A1D66A052C6D0CBB00D7969B /* MatchedView.swift in Sources */,
 				A1D66A092C6D1A8000D7969B /* CourseView.swift in Sources */,
+				A16FC4752C9AFAC000679796 /* SignUpView.swift in Sources */,
 				A183148D2C6F647100FC989F /* Model.swift in Sources */,
 				A1F57C692C56D28F005632A7 /* ContentView.swift in Sources */,
 				A18A254F2C638BA500382E63 /* TabBarView.swift in Sources */,
@@ -363,6 +374,7 @@
 				A1F57C672C56D28F005632A7 /* AppDictApp.swift in Sources */,
 				A18A25512C63942E00382E63 /* Tab.swift in Sources */,
 				A11960B12C6A8463007EEDD2 /* AnimatableFontModifier.swift in Sources */,
+				A16FC4732C999D0F00679796 /* Suggestion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
